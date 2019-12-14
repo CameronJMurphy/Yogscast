@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Controllers\Player2Con.cs" />
     <Compile Include="Assets\Scripts\Controllers\PlayerCon.cs" />
     <Compile Include="Assets\Scripts\Flag.cs" />
+    <Compile Include="Assets\Scripts\HeliumCanister.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IActivatable.cs" />
     <Compile Include="Assets\Scripts\Lever.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
