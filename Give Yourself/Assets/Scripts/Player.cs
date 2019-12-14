@@ -11,8 +11,10 @@ public class Player : MonoBehaviour
 	public float jumpTimer;
 	[SerializeField] private float jumpSpeed;
 	[SerializeField] private float moveSpeed;
+	public bool grounded = false;
 
 	public Text heliumText;
+	public Slider heliumBar;
 
 	private void Start()
 	{
@@ -61,9 +63,10 @@ public class Player : MonoBehaviour
 
 	virtual public void Movement()
 	{
-		jumpTimer -= Time.deltaTime;
+		
 		if (Input.GetKey(KeyCode.W)) //jump
 		{
+			jumpTimer -= Time.deltaTime;
 			if (jumpTimer > 0)
 			{
 				Jump();
@@ -71,14 +74,14 @@ public class Player : MonoBehaviour
 		}
 		if (Input.GetKey(KeyCode.A)) //left
 		{
-			if (jumpTimer > 0)
+			if (jumpTimer > 0 || grounded)
 			{
 				MoveLeft();
 			}
 		}
 		if (Input.GetKey(KeyCode.D)) //right
 		{
-			if (jumpTimer > 0)
+			if (jumpTimer > 0 || grounded)
 			{
 				MoveRight();
 			}
@@ -102,13 +105,16 @@ public class Player : MonoBehaviour
 		if (!other.gameObject.CompareTag("Player"))
 		{
 			jumpTimer = Helium / 2; //reset timer allowing player to jump
+			grounded = true;
 		}
 
 	}
 
 	private void displayHelium()
 	{
+		int maxTimer = 5;
 		heliumText.text = (Helium -1).ToString();
+		heliumBar.value = jumpTimer / maxTimer;
 	}
 
 }

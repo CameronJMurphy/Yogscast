@@ -19,6 +19,12 @@ public class UICon : MonoBehaviour
 	public delegate void OptionsButton();
 	public static event OptionsButton optionsButton;
 
+	public delegate void QuitButton();
+	public static event QuitButton quitButton;
+
+	public delegate void ResetButton();
+	public static event ResetButton resetButton;
+
 	public void StartGameButtonPress()
 	{
 		startGame();
@@ -42,5 +48,15 @@ public class UICon : MonoBehaviour
 	public void OptionsButtonPress()
 	{
 		optionsButton();
+	}
+
+	public void QuitButtonPress()
+	{
+		quitButton();
+	}
+
+	public void ResetButtonPress()
+	{
+		resetButton();
 	}
 }

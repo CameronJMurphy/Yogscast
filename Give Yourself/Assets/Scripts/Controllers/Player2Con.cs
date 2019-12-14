@@ -15,16 +15,16 @@ public class Player2Con : Player
 				Jump();
 			}
 		}
-		if (Input.GetKey(KeyCode.LeftArrow))
+		if (Input.GetKey(KeyCode.LeftArrow) )
 		{
-			if (jumpTimer > 0)
+			if (jumpTimer > 0 || grounded)
 			{
 				MoveLeft();
 			}
 		}
-		if (Input.GetKey(KeyCode.RightArrow))
+		if (Input.GetKey(KeyCode.RightArrow ) )
 		{
-			if (jumpTimer > 0)
+			if (jumpTimer > 0 || grounded)
 			{
 				MoveRight();
 			}

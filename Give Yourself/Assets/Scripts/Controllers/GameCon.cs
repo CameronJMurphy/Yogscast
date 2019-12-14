@@ -5,14 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class GameCon : MonoBehaviour
 {
-	private int lastSceneIndex;
+	public static GameCon instance;
+	//[SerializeField] private int lastSceneIndex;
+	private string lastScene;
 
 	// Start is called before the first frame update
 	void Start()
     {
+		if (instance == null) //singleton
+		{
+			instance = this;
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
+		DontDestroyOnLoad(this);
 		UICon.startGame += StartGame;
 		UICon.backButton += BackButtonPress;
 		UICon.optionsButton += OptionsButtonPress;
+		UICon.quitButton += QuitButtonPress;
+		UICon.resetButton += ResetButtonPress;
 	}
 
     // Update is called once per frame
@@ -38,12 +51,24 @@ public class GameCon : MonoBehaviour
 
 	private void BackButtonPress()
 	{
-		SceneManager.LoadScene(lastSceneIndex);
+		SceneManager.LoadScene(lastScene);
 	}
 
 	private void OptionsButtonPress()
 	{
-		lastSceneIndex = SceneManager.GetActiveScene().buildIndex;
+		lastScene = SceneManager.GetActiveScene().name;
+		
 		SceneManager.LoadScene("Options");
+	}
+
+	private void QuitButtonPress()
+	{
+		Debug.Log("Quit");
+		Application.Quit();
+	}
+
+	private void ResetButtonPress()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 }
