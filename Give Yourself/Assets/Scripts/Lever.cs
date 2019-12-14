@@ -14,6 +14,7 @@ public class Lever : MonoBehaviour
 	{
 		if (Activated == false)
 		{
+			Activated = true;
 			foreach (IActivatable activatable in activatables)
 			{
 				activatable.Activate();
@@ -22,6 +23,7 @@ public class Lever : MonoBehaviour
 		}
 		else
 		{
+			Activated = false;
 			foreach (IActivatable activatable in activatables)
 			{
 				activatable.Deactivate();
