@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GameCon : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+	private int lastSceneIndex;
+
+	// Start is called before the first frame update
+	void Start()
     {
-		UIButtonCon.startGame += StartGame;
-    }
+		UICon.startGame += StartGame;
+		UICon.backButton += BackButtonPress;
+		UICon.optionsButton += OptionsButtonPress;
+	}
 
     // Update is called once per frame
     void Update()
@@ -30,5 +34,16 @@ public class GameCon : MonoBehaviour
 	private void StartGame()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+	}
+
+	private void BackButtonPress()
+	{
+		SceneManager.LoadScene(lastSceneIndex);
+	}
+
+	private void OptionsButtonPress()
+	{
+		lastSceneIndex = SceneManager.GetActiveScene().buildIndex;
+		SceneManager.LoadScene("Options");
 	}
 }

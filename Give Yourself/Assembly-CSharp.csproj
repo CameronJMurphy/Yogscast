@@ -64,9 +64,10 @@
     <Compile Include="Assets\Scripts\AndGate.cs" />
     <Compile Include="Assets\Scripts\Button.cs" />
     <Compile Include="Assets\Scripts\Controllers\GameCon.cs" />
+    <Compile Include="Assets\Scripts\Controllers\MusicCon.cs" />
     <Compile Include="Assets\Scripts\Controllers\Player2Con.cs" />
     <Compile Include="Assets\Scripts\Controllers\PlayerCon.cs" />
-    <Compile Include="Assets\Scripts\Controllers\UIButtonCon.cs" />
+    <Compile Include="Assets\Scripts\Controllers\UICon.cs" />
     <Compile Include="Assets\Scripts\Flag.cs" />
     <Compile Include="Assets\Scripts\HeliumCanister.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IActivatable.cs" />
