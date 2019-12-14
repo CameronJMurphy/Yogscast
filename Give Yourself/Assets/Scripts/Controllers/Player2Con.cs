@@ -17,11 +17,17 @@ public class Player2Con : Player
 		}
 		if (Input.GetKey(KeyCode.LeftArrow))
 		{
-			MoveLeft();
+			if (jumpTimer > 0)
+			{
+				MoveLeft();
+			}
 		}
 		if (Input.GetKey(KeyCode.RightArrow))
 		{
-			MoveRight();
+			if (jumpTimer > 0)
+			{
+				MoveRight();
+			}
 		}
 	}
 

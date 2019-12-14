@@ -315,7 +315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e44c78cf2dc3404a95804350994258d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Helium: 11
+  Helium: 9
   otherPlayer: {fileID: 0}
   jumpTimer: 0
+  jumpSpeed: 2
+  moveSpeed: 5
   heliumText: {fileID: 514994899}

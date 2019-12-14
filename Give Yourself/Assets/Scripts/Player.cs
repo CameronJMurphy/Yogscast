@@ -9,8 +9,8 @@ public class Player : MonoBehaviour
 	private Rigidbody rb;
 	public Player otherPlayer;
 	public float jumpTimer;
-	private int jumpSpeed = 2;
-	private int moveSpeed = 5;
+	[SerializeField] private float jumpSpeed;
+	[SerializeField] private float moveSpeed;
 
 	public Text heliumText;
 
@@ -21,16 +21,16 @@ public class Player : MonoBehaviour
 	}
 	public void Jump()
 	{
-		rb.velocity = Vector3.up * jumpSpeed;
+		rb.velocity = new Vector3(rb.velocity.x, 1 * jumpSpeed,0);
 	}
 
 	public void MoveLeft()
 	{
-		rb.velocity = new Vector3(-1 * moveSpeed, -.5f, 0);
+		rb.velocity = new Vector3(-1 * moveSpeed, rb.velocity.y, 0);
 	}
 	public void MoveRight()
 	{
-		rb.velocity = new Vector3(1 * moveSpeed, -.5f, 0);
+		rb.velocity = new Vector3(1 * moveSpeed, rb.velocity.y, 0);
 	}
 
 	public void Deflate()
@@ -71,11 +71,17 @@ public class Player : MonoBehaviour
 		}
 		if (Input.GetKey(KeyCode.A)) //left
 		{
-			MoveLeft();
+			if (jumpTimer > 0)
+			{
+				MoveLeft();
+			}
 		}
 		if (Input.GetKey(KeyCode.D)) //right
 		{
-			MoveRight();
+			if (jumpTimer > 0)
+			{
+				MoveRight();
+			}
 		}
 	}
 
