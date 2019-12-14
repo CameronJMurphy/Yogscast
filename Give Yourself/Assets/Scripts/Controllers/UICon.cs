@@ -31,7 +31,7 @@ public class UICon : MonoBehaviour
 
 	public void FXVolumeModifier(float FXVol)
 	{
-		volumeChange(FXVol);
+		fXVolumeChange(FXVol);
 	}
 
 	public void BackButtonPress()
