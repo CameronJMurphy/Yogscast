@@ -6,10 +6,11 @@ public class Player2Con : Player
 {
 	public override void Movement()
 	{
-		jumpTimer -= Time.deltaTime;
+		
 		//player 2 jump
 		if (Input.GetKey(KeyCode.UpArrow))
 		{
+			jumpTimer -= Time.deltaTime;
 			if (jumpTimer > 0)
 			{
 				Jump();

@@ -25,6 +25,9 @@ public class UICon : MonoBehaviour
 	public delegate void ResetButton();
 	public static event ResetButton resetButton;
 
+	public delegate void MenuButton();
+	public static event MenuButton menuButton;
+
 	public void StartGameButtonPress()
 	{
 		startGame();
@@ -58,5 +61,10 @@ public class UICon : MonoBehaviour
 	public void ResetButtonPress()
 	{
 		resetButton();
+	}
+
+	public void MainMenuButtonPress()
+	{
+		menuButton();
 	}
 }

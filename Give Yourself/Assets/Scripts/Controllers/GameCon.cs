@@ -26,6 +26,7 @@ public class GameCon : MonoBehaviour
 		UICon.optionsButton += OptionsButtonPress;
 		UICon.quitButton += QuitButtonPress;
 		UICon.resetButton += ResetButtonPress;
+		UICon.menuButton += MenuButtonPress;
 	}
 
     // Update is called once per frame
@@ -70,5 +71,10 @@ public class GameCon : MonoBehaviour
 	private void ResetButtonPress()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
+	private void MenuButtonPress()
+	{
+		SceneManager.LoadScene("Menu"); 
 	}
 }
