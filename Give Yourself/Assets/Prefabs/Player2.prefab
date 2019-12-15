@@ -590,10 +590,10 @@ MonoBehaviour:
   Helium: 3
   otherPlayer: {fileID: 0}
   jumpTimer: 0
-  jumpSpeed: 20
-  moveSpeed: 7
+  jumpSpeed: 4
+  moveSpeed: 5
   airMoveSpeed: 4
-  timerDecaySpeed: 6
+  timerDecaySpeed: 4
   maxVelocity: 4
   grounded: 0
   heliumBuffer: 2

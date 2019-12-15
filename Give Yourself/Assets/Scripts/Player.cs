@@ -27,13 +27,8 @@ public class Player : MonoBehaviour
 		jumpTimer = Helium / timerDecaySpeed;
 	}
 	public void Jump()
-	{
-		rb.AddForce(new Vector3(rb.velocity.x, 1 * jumpSpeed, 0));
-
-		if (rb.velocity.y > maxVelocity)
-		{
-			rb.velocity = new Vector3(rb.velocity.x, maxVelocity, 0);
-		}
+	{		
+		rb.velocity = new Vector3(rb.velocity.x, 1 * jumpSpeed, 0);
 	}
 
 	public void MoveLeft()
