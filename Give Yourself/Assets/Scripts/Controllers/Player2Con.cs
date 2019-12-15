@@ -32,15 +32,14 @@ public class Player2Con : Player
 		}
 	}
 
-	public override void OnCollisionStay(Collision collision)
+
+	public override void DectectHeliumExchange()
 	{
-		if (collision.gameObject.CompareTag("Player"))
+		if (Input.GetButtonDown("HeliumSwitch2") && Mathf.Abs(otherPlayer.transform.position.x - transform.position.x) <= heliumBuffer
+			&& Mathf.Abs(otherPlayer.transform.position.y - transform.position.y) <= heliumBuffer) //One player loses helium and one player gains helium
 		{
-			if (Input.GetButtonDown("HeliumSwitch2")) //player2 loses helium and player 1 gains helium
-			{
-				Deflate();
-				otherPlayer.Inflate();
-			}
+			Deflate();
+			otherPlayer.Inflate();
 		}
 	}
 }

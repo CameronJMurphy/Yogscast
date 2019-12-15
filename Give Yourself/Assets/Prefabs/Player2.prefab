@@ -539,7 +539,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7009405084828619482}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 63f955aaa96fd154a87eba42a6c6d2f5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -569,12 +569,12 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7009405084828619482}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 63f955aaa96fd154a87eba42a6c6d2f5, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.43928123, y: 0.2628703, z: 1}
-  m_Center: {x: 0.01649177, y: -0.9565208, z: 0}
+  m_Size: {x: 0.82859796, y: 0.2628703, z: 1}
+  m_Center: {x: 0.017852992, y: -0.9565208, z: 0}
 --- !u!114 &1639289137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,11 +587,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e44c78cf2dc3404a95804350994258d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Helium: 1
+  Helium: 3
   otherPlayer: {fileID: 0}
   jumpTimer: 0
-  jumpSpeed: 2
-  moveSpeed: 5
+  jumpSpeed: 20
+  moveSpeed: 7
+  airMoveSpeed: 4
+  timerDecaySpeed: 6
+  maxVelocity: 4
   grounded: 0
+  heliumBuffer: 2
   heliumText: {fileID: 514994899}
   heliumBar: {fileID: 190035961}

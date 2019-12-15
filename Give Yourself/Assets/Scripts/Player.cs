@@ -11,7 +11,12 @@ public class Player : MonoBehaviour
 	public float jumpTimer;
 	[SerializeField] private float jumpSpeed;
 	[SerializeField] private float moveSpeed;
+	[SerializeField] private float airMoveSpeed;
+	[SerializeField] private float timerDecaySpeed;
+	[SerializeField] private float maxVelocity;
 	public bool grounded = false;
+	public float heliumBuffer;
+
 
 	public Text heliumText;
 	public Slider heliumBar;
@@ -19,20 +24,39 @@ public class Player : MonoBehaviour
 	private void Start()
 	{
 		rb = GetComponent<Rigidbody>();
-		jumpTimer = Helium / 2;
+		jumpTimer = Helium / timerDecaySpeed;
 	}
 	public void Jump()
 	{
-		rb.velocity = new Vector3(rb.velocity.x, 1 * jumpSpeed,0);
+		rb.AddForce(new Vector3(rb.velocity.x, 1 * jumpSpeed, 0));
+
+		if (rb.velocity.y > maxVelocity)
+		{
+			rb.velocity = new Vector3(rb.velocity.x, maxVelocity, 0);
+		}
 	}
 
 	public void MoveLeft()
 	{
-		rb.velocity = new Vector3(-1 * moveSpeed, rb.velocity.y, 0);
+		if (grounded)
+		{
+			rb.velocity = new Vector3(-1 * moveSpeed, rb.velocity.y, 0); // on ground ms
+		}
+		else
+		{
+			rb.velocity = new Vector3(-1 * airMoveSpeed, rb.velocity.y, 0); //in the air ms
+		}
 	}
 	public void MoveRight()
 	{
-		rb.velocity = new Vector3(1 * moveSpeed, rb.velocity.y, 0);
+		if (grounded)
+		{
+			rb.velocity = new Vector3(1 * moveSpeed, rb.velocity.y, 0); // on ground ms
+		}
+		else
+		{
+			rb.velocity = new Vector3(1 * airMoveSpeed, rb.velocity.y, 0); // in the air ms
+		}
 	}
 
 	public void Deflate()
@@ -40,7 +64,7 @@ public class Player : MonoBehaviour
 		if (Helium > 1)
 		{
 			--Helium;
-			jumpTimer = Helium / 2;
+			jumpTimer = Helium / timerDecaySpeed;
 		}
 
 	}
@@ -50,15 +74,17 @@ public class Player : MonoBehaviour
 		if (Helium < 11)
 		{
 			++Helium;
-			jumpTimer = Helium / 2;
+			jumpTimer = Helium / timerDecaySpeed;
 		}
 
 	}
-	// Update is called once per frame
+
 	void FixedUpdate()
 	{
 		Movement();
 		displayHelium();
+		DectectHeliumExchange();
+
 	}
 
 	virtual public void Movement()
@@ -88,31 +114,37 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	virtual public void OnCollisionStay(Collision collision)
+	public virtual void DectectHeliumExchange()
 	{
-		if (collision.gameObject.CompareTag("Player"))
+		
+		if (Input.GetButtonDown("HeliumSwitch1") && Mathf.Abs(otherPlayer.transform.position.x - transform.position.x) <= heliumBuffer
+			&& Mathf.Abs(otherPlayer.transform.position.y - transform.position.y) <= heliumBuffer) //One player loses helium and one player gains helium
 		{
-			if (Input.GetButtonDown("HeliumSwitch1")) //player2 loses helium and player 1 gains helium
-			{
-				Deflate();
-				otherPlayer.Inflate();
-			}
+			Deflate();
+			otherPlayer.Inflate();
 		}
+		
+
 	}
 
 	private void OnTriggerStay(Collider other)
 	{
 		if (!other.gameObject.CompareTag("Player"))
 		{
-			jumpTimer = Helium / 2; //reset timer allowing player to jump
+			jumpTimer = Helium / timerDecaySpeed; //reset timer allowing player to jump
 			grounded = true;
 		}
 
 	}
+	private void OnTriggerExit(Collider other)
+	{
+		grounded = false;
+	}
 
 	private void displayHelium()
 	{
-		int maxTimer = 5;
+		int maxHelium = 11;
+		float maxTimer = maxHelium / timerDecaySpeed;
 		heliumText.text = (Helium -1).ToString();
 		heliumBar.value = jumpTimer / maxTimer;
 	}
