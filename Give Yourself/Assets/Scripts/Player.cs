@@ -21,18 +21,25 @@ public class Player : MonoBehaviour
 	public Text heliumText;
 	public Slider heliumBar;
 
+	public Animation run;
+	public Animation jetpack;
+
+	public SpriteRenderer idleAni;
+
+
 	private void Start()
 	{
 		rb = GetComponent<Rigidbody>();
 		jumpTimer = Helium / timerDecaySpeed;
 	}
 	public void Jump()
-	{		
+	{
 		rb.velocity = new Vector3(rb.velocity.x, 1 * jumpSpeed, 0);
 	}
 
 	public void MoveLeft()
 	{
+		idleAni.flipX = false;
 		if (grounded)
 		{
 			rb.velocity = new Vector3(-1 * moveSpeed, rb.velocity.y, 0); // on ground ms
@@ -44,8 +51,10 @@ public class Player : MonoBehaviour
 	}
 	public void MoveRight()
 	{
+		idleAni.flipX = true;
 		if (grounded)
 		{
+
 			rb.velocity = new Vector3(1 * moveSpeed, rb.velocity.y, 0); // on ground ms
 		}
 		else

@@ -269,7 +269,7 @@ Animator:
   m_GameObject: {fileID: 1367084754}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 88dbe1dc68a934c4a96582d998e1878e, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -372,10 +372,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 63f955aaa96fd154a87eba42a6c6d2f5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.911678
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: -0.003770709, y: 0, z: 0}
+  m_Center: {x: 0.04768902, y: 0, z: 0}
 --- !u!54 &4688065132927497109
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -403,8 +403,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8448725, y: 0.2628708, z: 1}
-  m_Center: {x: -0.008348048, y: -0.95652056, z: 0}
+  m_Size: {x: 1.372335, y: 0.2628708, z: 1}
+  m_Center: {x: 0.036679298, y: -0.95652056, z: 0}
 --- !u!114 &123789487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,6 +429,9 @@ MonoBehaviour:
   heliumBuffer: 2
   heliumText: {fileID: 33254398}
   heliumBar: {fileID: 3826560237467581720}
+  run: {fileID: 0}
+  jetpack: {fileID: 0}
+  idleAni: {fileID: 6340341564397997665}
 --- !u!1 &3400956759968566083
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,6 +516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4820840241050723282}
   - component: {fileID: 6340341564397997665}
+  - component: {fileID: 6444073497660946687}
   m_Layer: 0
   m_Name: idle_0
   m_TagString: Untagged
@@ -528,7 +532,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3698652225274318830}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.425, y: 0.108, z: 0}
+  m_LocalPosition: {x: -0.04, y: 0.08, z: 0}
   m_LocalScale: {x: 0.12251101, y: 0.12251101, z: 0.12251101}
   m_Children: []
   m_Father: {fileID: 3798117148083672697}
@@ -582,6 +586,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6444073497660946687
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3698652225274318830}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21a7890c179ac1b4587d4c84d23ce471, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5412100856328243874
 GameObject:
   m_ObjectHideFlags: 0

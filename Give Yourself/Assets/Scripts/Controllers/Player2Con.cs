@@ -18,6 +18,7 @@ public class Player2Con : Player
 		}
 		if (Input.GetKey(KeyCode.LeftArrow) )
 		{
+			idleAni.flipX = false;
 			if (jumpTimer > 0 || grounded)
 			{
 				MoveLeft();
@@ -25,6 +26,7 @@ public class Player2Con : Player
 		}
 		if (Input.GetKey(KeyCode.RightArrow ) )
 		{
+			idleAni.flipX = true;
 			if (jumpTimer > 0 || grounded)
 			{
 				MoveRight();

@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 10914bc6fad5d5b4baaa37055567a1a7
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: lever sprite sheet_0
+    21300002: lever sprite sheet_1
+    21300004: lever sprite sheet_2
+    21300006: lever sprite sheet_3
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -82,7 +86,87 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: lever sprite sheet_0
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 2223
+        width: 1608
+        height: 1430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f894569f9e10b409c6151eff68cb91
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lever sprite sheet_1
+      rect:
+        serializedVersion: 2
+        x: 2223
+        y: 2223
+        width: 1608
+        height: 1608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d776a0c8cf2bea409fde1aaf30f6955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lever sprite sheet_2
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 175
+        width: 1608
+        height: 1342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b49e5e68ce19c054f94d9dd25816c3c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lever sprite sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2223
+        y: 175
+        width: 1608
+        height: 1608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 184a6819d1ca7184dbf66b7b14b50236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

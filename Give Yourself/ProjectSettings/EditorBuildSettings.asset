@@ -9,17 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 3e0e1b8f9ca4bce42b51805022637920
   - enabled: 1
-    path: Assets/Scenes/ZaneScenes/Level 1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/CompleteScenes/Level_1.unity
+    guid: 8158557cf313ce8408a4219260867e54
   - enabled: 1
-    path: Assets/Scenes/ZaneScenes/Level 2.unity
-    guid: 65612f4e0ab46654486dcaa6623c9068
+    path: Assets/Scenes/CompleteScenes/Level_2.unity
+    guid: 039afbd57aa082748b0477fa31a9d31b
   - enabled: 1
-    path: Assets/Scenes/ZaneScenes/Level 3.unity
-    guid: 4b8f74cc22d413543ad0d955ea42c6e0
+    path: Assets/Scenes/CompleteScenes/Level_3.unity
+    guid: 61483aa09ed7bc845befbb2b0b0391cc
   - enabled: 1
-    path: Assets/Scenes/ZaneScenes/Level_4.unity
-    guid: 9969f37916f54904a9b3ac3091c1262b
+    path: Assets/Scenes/CompleteScenes/Level_4.unity
+    guid: 622ade6a56811424989a4d5e6c213007
   - enabled: 1
     path: Assets/Scenes/EndScreen.unity
     guid: 2470f05f3ab77844fbf40920f90d4ef7
